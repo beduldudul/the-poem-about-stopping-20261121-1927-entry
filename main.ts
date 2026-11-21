@@ -10,7 +10,8 @@ Stopping is not losing —
 it is the one thing
 no one else can do for me.`;
 
-const outDir = process.env.MAKEFUN_OUTPUT_DIR ?? "/output";
+const rawOutDir = process.env.MAKEFUN_OUTPUT_DIR?.trim();
+const outDir = rawOutDir ? rawOutDir : "/output";
 const outPath = join(outDir, "entry.txt");
 
 const codePoints = [...POEM].length;
